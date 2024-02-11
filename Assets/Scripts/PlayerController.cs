@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private Vector2 inputVec;
+    public Vector2 inputVec;
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private float _speed;
     [SerializeField] private SpriteRenderer _sprite;
