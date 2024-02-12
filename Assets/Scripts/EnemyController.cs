@@ -24,9 +24,9 @@ public class EnemyController : MonoBehaviour
         var position = transform.position;
         
         var dir = target.transform.position - position;
-        var nextMoveVec = dir * (speed * Time.fixedDeltaTime);
+        var nextMoveVec = dir.normalized * (speed * Time.fixedDeltaTime);
         rigid.MovePosition(position + nextMoveVec);
-        rigid.velocity = Vector3.zero;
+        rigid.velocity = Vector3.zero; 
     }
 
     private void LateUpdate()
