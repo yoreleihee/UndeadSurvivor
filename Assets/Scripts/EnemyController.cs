@@ -33,4 +33,9 @@ public class EnemyController : MonoBehaviour
     {
         spriteRenderer.flipX = target.transform.position.x < transform.position.x;
     }
+
+    private void OnEnable()
+    {
+        target = GameManager.Instance.player.gameObject;
+    }
 }
