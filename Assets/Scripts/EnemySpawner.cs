@@ -13,7 +13,6 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float spawnIntervalEasyLevel = 3f;
     [SerializeField] private float spawnIntervalNormalLevels = 1f;
 
-
     private void Awake()
     {
         spawnPoint = GetComponentsInChildren<Transform>();
@@ -44,3 +43,4 @@ public class EnemySpawner : MonoBehaviour
         enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
     }
 }
+

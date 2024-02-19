@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private Rigidbody2D rigid;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Enemy _enemyData;
 
     private void Awake()
     {
