@@ -25,4 +25,13 @@ public static class DataManager
 
         return Resources.Load<T>(filePath);
     }
+
+    private const string ANIMATOR_FILE_ROOT_DIRECTORY = "Animator";
+
+    public static RuntimeAnimatorController LoadAnimator(string filename)
+    {
+        string filepath = Path.Combine(ANIMATOR_FILE_ROOT_DIRECTORY, filename);
+
+        return Resources.Load<RuntimeAnimatorController>(filepath);
+    }
 }

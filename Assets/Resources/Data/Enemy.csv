@@ -1,3 +1,3 @@
-1,Enemy 0,2,5
-2,Enemy 1,3,10
-3,Enemy 2,4,15
+1,Enemy 0,2,5,AcEnemy 0,5
+2,Enemy 1,3,10,AcEnemy 1,3
+3,Enemy 2,4,15,AcEnemy 2,1

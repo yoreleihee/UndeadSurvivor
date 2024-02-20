@@ -10,14 +10,29 @@ public class EnemyController : MonoBehaviour
     
     [Header("Enemy Data")]
     [SerializeField] private float speed;
+    [SerializeField] private float health;
+    [SerializeField] private float maxHealth; 
+    [SerializeField] private RuntimeAnimatorController[] animCon;
+    [SerializeField] private bool isLive;
+    
+    [Header("Enemy Component")]
     [SerializeField] private Rigidbody2D rigid;
     [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private Enemy _enemyData;
+    [SerializeField] private Animator animator;
 
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+    }
+
+    public void Init(Enemy enemyData)
+    {
+        speed = enemyData.Speed;
+        maxHealth = enemyData.Health;
+        health = enemyData.Health;
+        animator.runtimeAnimatorController = DataManager.LoadAnimator(enemyData.Animator);
     }
 
     private void FixedUpdate()
@@ -32,11 +47,16 @@ public class EnemyController : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (!isLive)
+            return;
+        
         spriteRenderer.flipX = target.transform.position.x < transform.position.x;
     }
 
     private void OnEnable()
     {
         target = GameManager.Instance.player.gameObject;
+        isLive = true;
+        health = maxHealth;
     }
 }

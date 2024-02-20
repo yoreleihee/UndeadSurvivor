@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -10,8 +8,6 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Transform[] spawnPoint;
     [SerializeField] private int level;
     [SerializeField] private float levelInterval = 10;
-    [SerializeField] private float spawnIntervalEasyLevel = 3f;
-    [SerializeField] private float spawnIntervalNormalLevels = 1f;
 
     private void Awake()
     {
@@ -25,6 +21,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
+        // Todo : level은 DataManager.Enemies.length만큼만 증가해야 한다.
         level = Mathf.FloorToInt(GameManager.Instance.gameTime / levelInterval);
     }
 
@@ -33,14 +30,16 @@ public class EnemySpawner : MonoBehaviour
         while (true)
         {
             Spawn();
-            await UniTask.Delay(level == 0 ? TimeSpan.FromSeconds(spawnIntervalEasyLevel) : TimeSpan.FromSeconds(spawnIntervalNormalLevels));
+            await UniTask.Delay(TimeSpan.FromSeconds(DataManager.Enemies[level].SpawnTime));
         }
     }
     
     private void Spawn()
     {
-        var enemy = GameManager.Instance.poolManager.Get(level);
+        var enemy = GameManager.Instance.poolManager.Get(0);
         enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
+        
+        enemy.GetComponent<EnemyController>().Init(DataManager.Enemies[level]);
     }
 }
 

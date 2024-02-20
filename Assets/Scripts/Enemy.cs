@@ -10,6 +10,8 @@ public class Enemy
     public float Speed { get; set; }
     [Index(3)]
     public float Health { get; set; }
-    // [Index(4)]
-    // public string AnimatorController { get; set; }
+    [Index(4)]
+    public string Animator { get; set; }
+    [Index(5)]
+    public float SpawnTime { get; set; }
 }
