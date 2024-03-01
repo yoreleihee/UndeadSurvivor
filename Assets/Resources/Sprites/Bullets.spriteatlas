@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Bullets
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 1737672109, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
+    - {fileID: -703694536, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
+    - {fileID: 762804792, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
+    - {fileID: -537537479, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
+    - {fileID: -1327499133, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
+    - {fileID: 154122315, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 0d5e657ee5a074e4baa53d5b248a01d2: -537537479
+    - 0d5e657ee5a074e4baa53d5b248a01d2: 762804792
+    - 0d5e657ee5a074e4baa53d5b248a01d2: -703694536
+    - 0d5e657ee5a074e4baa53d5b248a01d2: 1737672109
+    - 0d5e657ee5a074e4baa53d5b248a01d2: 154122315
+    - 0d5e657ee5a074e4baa53d5b248a01d2: -1327499133
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -537537479, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
+  - {fileID: 762804792, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
+  - {fileID: -703694536, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
+  - {fileID: 1737672109, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
+  - {fileID: 154122315, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
+  - {fileID: -1327499133, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Bullet 3
+  - Bullet 2
+  - Bullet 1
+  - Bullet 0
+  - Bullet 5
+  - Bullet 4
+  m_RenderDataMap: {}
+  m_Tag: Bullets
+  m_IsVariant: 0

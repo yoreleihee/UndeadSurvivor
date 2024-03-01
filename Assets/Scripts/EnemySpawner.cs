@@ -22,7 +22,7 @@ public class EnemySpawner : MonoBehaviour
     private void Update()
     {
         // Todo : level은 DataManager.Enemies.length만큼만 증가해야 한다.
-        level = Mathf.FloorToInt(GameManager.Instance.gameTime / levelInterval);
+        level = Mathf.Min(Mathf.FloorToInt(GameManager.Instance.gameTime / levelInterval), DataManager.Enemies.Count -1);
     }
 
     private async UniTaskVoid SpawnTimer()

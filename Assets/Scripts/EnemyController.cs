@@ -59,4 +59,30 @@ public class EnemyController : MonoBehaviour
         isLive = true;
         health = maxHealth;
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        var bullet = other.GetComponent<BulletController>();
+        if (bullet != null)
+        {
+            // Todo : bullet.Init()
+            health -= bullet.damage;
+        }
+
+        // Live
+        if (health > 0)
+        {
+            // Todo : HitAction
+        }
+
+        else
+        {
+            Dead();
+        }
+    }
+
+    private void Dead()
+    {
+        gameObject.SetActive(false);
+    }
 }
