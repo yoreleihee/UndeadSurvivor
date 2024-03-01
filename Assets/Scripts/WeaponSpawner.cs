@@ -5,7 +5,7 @@ public class WeaponSpawner : MonoBehaviour
     [SerializeField] private int count;
     [SerializeField] private int prefabId = 1;
     [SerializeField] private float rotationSpeed;
-    private int _id  = 0;
+    private int _level  = 0;
 
     private void Start()
     {
@@ -14,7 +14,7 @@ public class WeaponSpawner : MonoBehaviour
 
     private void Update()
     {
-        switch (_id)
+        switch (_level)
         {
             case 0:
                 transform.Rotate(Vector3.back * rotationSpeed * Time.deltaTime);
@@ -37,13 +37,13 @@ public class WeaponSpawner : MonoBehaviour
     {
         // Todo: 레벨은 DataManager.Bullets.Count보다 적어야 한다.
         // Todo: 생성 개수 count를 Bullet 데이터에 포함시킬지 정해야 함.
-        _id++;
+        _level = Mathf.Min(++_level, DataManager.Bullets.Count - 1);
         Init();
     }
 
     public void Init()
     {
-        switch (_id)
+        switch (_level)
         {
             case 0:
                 rotationSpeed = 150;
@@ -77,7 +77,7 @@ public class WeaponSpawner : MonoBehaviour
             bullet.localPosition = Vector3.zero;
             bullet.localRotation = Quaternion.identity;
             
-            bullet.GetComponent<BulletController>().Init(DataManager.Bullets[_id]);
+            bullet.GetComponent<BulletController>().Init(DataManager.Bullets[_level]);
             
             // 배치
             var rotVac = Vector3.forward * 360 * i / count;

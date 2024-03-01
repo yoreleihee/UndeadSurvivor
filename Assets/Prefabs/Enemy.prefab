@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8654557693381183055}
   - component: {fileID: 4553948190515140725}
   - component: {fileID: 8996081368271998973}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -187,8 +187,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   speed: 1
+  health: 0
+  maxHealth: 0
+  animCon: []
+  isLive: 0
   rigid: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!114 &8996081368271998973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,7 +219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1942577727603633058}
   - component: {fileID: 2008438690376249083}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
